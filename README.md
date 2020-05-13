@@ -8,6 +8,9 @@ Dataset provided by Kaggle for the competition on COVID-19 Global Forecasting(We
 # Visualization
 
 ![](Visualization_Images/Count_of_Cases_and_Deaths.png)
+![](Visualization_Images/Confirmed_Cases.png)
+![](Visualization_Images/Confirmed_Deaths.png)
+![](Visualization_Images/Global_Case.png)
 # Modelling
 
 There are several machine learning models we can use for Time Series Forecasting Data such as Linear Regression,Naive, ARIMA, Tree Based models. But I have used XGBoost Regressor, it is a supervised algorithm and it has wide varity of tuning parameters.It outperforms in speed and gives better performance and also it minimize the loss when compare to other algorithms.I also would like to get some experience in Neural networks as well, since LSTM is used for sequence prediction problems I tried to employ the same for this Time Series Forecasting Dataset.
