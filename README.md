@@ -30,9 +30,12 @@ The other model that was used is LSTM. It is generally used for sequence predict
 The models XGBoost and LSTM are evaluated using RMSE (Root Mean Square Error) metric. Since the test data does not contain the target variables such as ConfirmedCases and Fatalities, the train data set had to be split to evaluate the predicted result. 
 #### RMSE evaluation for Cases
 RMSE for LSTM: 0.016
+
 RMSE for XGBoost: 3762.27
 #### RMSE evaluation for Fatalities
 RMSE for LSTM: 0.011
+
 RMSE for XGBoost: 247.45
+
 Based on the metric evaluation, it is evident that LSTM model is better at predicting that confirmed cases and fatalities. High RMSE value denotes that XGBoost requires further hyper parameter tuning for reliable results. 
 
