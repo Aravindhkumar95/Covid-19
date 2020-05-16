@@ -46,4 +46,6 @@ Based on the metric evaluation, it is evident that LSTM model is better at predi
 
 ## Comparing Actual vs Predicted Values
 
-Comparing the Actual Confirmed Cases with Predicted Cases. LSTM predicts the values perfectly as same as actual value. 
+Comparing the Actual Confirmed Cases with Predicted Cases. LSTM predicts the values perfectly as same as actual value.
+
+![](Visualization_Images/ActualvsPredictedValues.png)
