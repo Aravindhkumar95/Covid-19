@@ -6,6 +6,9 @@ This project is aimed at arriving at accurate forecast for the confirmed cases a
 
 Two datasets (train.csv and test.csv) from Kaggle are employed in this project. Link to access the datasets - https://www.kaggle.com/c/covid19-global-forecasting-week-4/data
 
+Data schema is laid out below:
+![](Visualization_Images/DataSchema.png)
+
 The Train data set, containing 35,650 rows, is used as a basis to predict the confirmed cases and fatalities. This details of the number of confirmed cases and fatalities in each state specific to its respective country on a particular date between January to April. The features that describe these details are Country_Region, Province_State, Date, ConfirmedCases and Fatalities. 
 The Test data set, containing 13,459 rows, has the same set of countries and states with the date range for which the confirmed cases and fatalities are to be predicted, which is April to May. This file has the same features as the Train data except the ConfirmedCases and Fatalities since they are yet to be predicted.
 
@@ -21,9 +24,11 @@ Reference for the code for the visualisation can be found https://opensource.com
 ![](Visualization_Images/Confirmed_Deaths.png)
 
 ## Modelling
+### XGBOOST Algorithm
+Boosting is a sequential technique which combines the predictions from multiple decision tree to generate an ensemble tree. It delivers a revamped accuracy by combining the set of weak learners from other trees. So, the corrected predicted outputs from each tree are given a lower weight and irrelevant outputs are higher weighted.  The final ensembles tree concludes with important features and parameters to build better model and exploit the misclassification errors from other model and try to reduce the errors. XGBoost is preferred owing to its speed and performance, also it has multiple parameters that enable us to tune them and obtain better results. Before building the model, new features from raw data was extracted to improve the performance of algorithm. The model was then fine tuned with GridSearchCV function, using different values of max depth, Learning rate and No. of Estimators as tuning parameters. After which trained XGBoost model was used to predict the confirmed cases and fatalities.
 
-To achieve the desired results, XGBoost Algorithm is employed. XGBoost is preferred owing to its speed and performance, also it has multiple parameters that enable us to tune them and obtain better results. Before building the model, new features from raw data was extracted to improve the performance of algorithm. The model was then fine tuned with GridSearchCV function, using different values of max depth, Learning rate and No. of Estimators as tuning parameters. After which trained XGBoost model was used to predict the confirmed cases and fatalities. 
-The other model that was used is LSTM. It is generally used for sequence prediction problem by extracting past observations to predict the next value. LSTM wold be ideal for Time Series Forecasting. LSTM model required the input variables to be normalized, converted to supervised learning and reshaped into three-Dimensional Data. Once this is done, prediction can be successfully achieved. 
+### LSTM (Long Short-Term Memory)
+LSTM is a category of  Recurrent Neural Network(RNN).  RNN works well when it deals with short-term dependencies, but RNN does not grasp the context of input. If the dataset is loaded with huge amount of  irrelevant data , RNN fails to remember the important information of data after short duration of time. This particular problem is called Vanishing Gradient. To overcome the Vanishing Gradient problem LSTM can be used. LSTM architecture is built in such a way that it can store information or forget information using cell states when the information flow through network. With the help of cell states, LSTM can make small modifications to the input by selectively remember things which is important under the context and forget the information which is irrelevant using forget gate. LSTM is generally used for sequence prediction problem by extracting past observations to predict the next value. It would be ideal for Time Series Forecasting. LSTM model requires the input variables to be normalized, converted to supervised learning and reshaped into three-Dimensional Data. Once this is achieved, prediction can be successfully achieved. 
 
 ## Evaluation/Result
 
@@ -39,3 +44,6 @@ RMSE for XGBoost: 247.45
 
 Based on the metric evaluation, it is evident that LSTM model is better at predicting that confirmed cases and fatalities. High RMSE value denotes that XGBoost requires further hyper parameter tuning for reliable results. 
 
+## Comparing Actual vs Predicted Values
+
+Comparing the Actual Confirmed Cases with Predicted Cases. LSTM predicts the values perfectly as same as actual value. 
