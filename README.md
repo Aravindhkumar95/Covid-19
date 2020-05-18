@@ -7,7 +7,30 @@ This project is aimed at arriving at accurate forecast for the confirmed cases a
 Two datasets (train.csv and test.csv) from Kaggle are employed in this project. Link to access the datasets - https://www.kaggle.com/c/covid19-global-forecasting-week-4/data
 
 Data schema is laid out below:
-![](Visualization_Images/DataSchema.png)
+
+<table>
+<tr><th><b>Train</b></th><th><b>Test</b></th></tr>
+<tr><td>
+
+|Columns|Type|
+|-------|----|
+|ID     |Int |
+|Province_State|Object|
+|Country_Region|Object|
+|Date|Object|
+|ConfirmedCases|Float64|
+|Fatalities|Float64
+
+</td><td>
+
+|Columns|Type|
+|-------|----|
+|ID     |Int |
+|Province_State|Object|
+|Country_Region|Object|
+|Date|Object|
+
+</td></tr> </table>
 
 The Train data set, containing 35,650 rows, is used as a basis to predict the confirmed cases and fatalities. This details of the number of confirmed cases and fatalities in each state specific to its respective country on a particular date between January to April. The features that describe these details are Country_Region, Province_State, Date, ConfirmedCases and Fatalities. 
 The Test data set, containing 13,459 rows, has the same set of countries and states with the date range for which the confirmed cases and fatalities are to be predicted, which is April to May. This file has the same features as the Train data except the ConfirmedCases and Fatalities since they are yet to be predicted.
