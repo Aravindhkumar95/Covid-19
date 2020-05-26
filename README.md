@@ -69,6 +69,6 @@ Based on the metric evaluation, it is evident that LSTM model is better at predi
 
 ## Comparing Actual vs Predicted Values
 
-Comparing the Actual Confirmed Cases with Predicted Cases. LSTM predicts the values perfectly as same as actual value.
+Comparing the Actual Confirmed Cases with Predicted Cases for both LSTM and XGBoost Model. LSTM predicts the cases perfectly as same as actual value. However the cases predicted by XGBoost model were very low when comapare to actual value. It is evident that LSTM model produces better result for this particular Dataset.
 
-![](Visualization_Images/ActualvsPredictedValues.png)
+![](Visualization_Images/Actual_vs_Predicted_value.png) ![](Visualization_Images/Actual_vs_Predicted_value_XGB.png)
